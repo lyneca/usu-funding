@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body, html {
+    font-family: 'Inconsolata';
+    height: 100%;
+}
+
+input {
+    font-family: 'Inconsolata';
+    font-size: inherit;
+    margin: 3px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+}
+
+.info {
+    margin: 10px;
+}
+
+p {
+    margin-left: 1em;
+}
+
+canvas {
+    position: relative;
+    /* width: 100% !important;
+    height: 100% !important; */
+}
+
+#break-even-new,
+#break-even-old {
+    font-weight: bold;
+}
