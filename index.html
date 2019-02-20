@@ -21,46 +21,50 @@
 <body>
     <div class="container">
         <div class="info">
-            <h1>USU Funding Changes</h1>
-            <p>
-                The USU has changed student pricing for ACCESS membership:
-            </p>
-            <ul>
-                <li>$0 membership fee</li>
-                <li>optional $45 'discount' price (for a 10% discount campus-wide)</li>
-            </ul>
-            <p>
-                They have also cut funding for society events.
-                Previously, societies were funded for $6 per ACCESS member
-                for on-campus events, or $4 for off-campus events, up until
-                breaking even. This is represented by the blue line on the
-                graph to the right.
-            </p>
-            <p>
-                With the new funding scheme, societies are funded for 30%
-                of the total event cost, plus $1 per USU member attending.
-                This is represented by the red line.
-            </p>
-            <h2>Event Cost</h2>
-            <p>
-                $<input id="price-range" type="number" min="0" max="1000" value="150">
-            </p>
+            <div class="description">
+                <h1>USU Funding Changes</h1>
+                <p>
+                    The USU has changed student pricing for ACCESS membership:
+                </p>
+                <ul>
+                    <li>$0 membership fee</li>
+                    <li>optional $45 'discount' price (for a 10% discount campus-wide)</li>
+                </ul>
+                <p>
+                    They have also cut funding for society events.
+                    Previously, societies were funded for $6 per ACCESS member
+                    for on-campus events, or $4 for off-campus events, up until
+                    breaking even. This is represented by the blue line on the
+                    graph to the right.
+                </p>
+                <p>
+                    With the new funding scheme, societies are funded for 30%
+                    of the total event cost, plus $1 per USU member attending.
+                    This is represented by the red line.
+                </p>
+            </div>
+            <div class="calculations">
+                <h2>Event Cost</h2>
+                <p>
+                    $<input id="price-range" type="number" min="0" max="1000" value="150">
+                </p>
 
-            <h2>Funding</h2>
-            <h3>Old Scheme</h3>
-            <p>
-                $6 per ACCESS member
-            </p>
-            <h3>New Scheme</h3>
-            <p>
-                <span id="percent-refunded"></span> + $1 per USU member
-            </p>
-            <h2>Attendance required to break even</h2>
-            <p>
-                Old: <span id="break-even-old"></span> members
-                <br />
-                New: <span id="break-even-new"></span> members
-            </p>
+                <h2>Funding</h2>
+                <h3>Old Scheme</h3>
+                <p>
+                    $6 per ACCESS member
+                </p>
+                <h3>New Scheme</h3>
+                <p>
+                    <span id="percent-refunded"></span> + $1 per USU member
+                </p>
+                <h2>Attendance required to break even</h2>
+                <p>
+                    Old: <span id="break-even-old"></span> members
+                    <br />
+                    New: <span id="break-even-new"></span> members
+                </p>
+            </div>
         </div>
         <div class="canvas">
             <canvas id="canvas"></canvas>

@@ -54,6 +54,7 @@ let chart = new chartjs.Chart(ctx, {
     },
     options: {
         responsive: true,
+        maintainAspectRatio: false,
         title: {
             display: true,
             text: `USU funding provided for \$${input.value} event`
