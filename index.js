@@ -6,9 +6,10 @@ function getOldPoints(price) {
     })
 }
 
-function getNewPoints(price) {
+function getNewPoints(price, mult) {
+    mult = mult ? mult : 0.5;
     return [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map((x) => {
-        return { x: x, y: price * 0.3 + x }
+        return { x: x, y: price * mult + x }
     })
 }
 
@@ -40,7 +41,14 @@ let chart = new chartjs.Chart(ctx, {
                 fill: false
             },
             {
-                label: "New Funding",
+                label: "Feb 2019 Funding Scheme",
+                data: getNewPoints(input.value, 0.3),
+                backgroundColor: "rgba(200, 200, 200, 0.9)",
+                borderColor: "rgba(200, 200, 200, 0.9)",
+                fill: false
+            },
+            {
+                label: "Aug 2019 Funding Scheme",
                 data: getNewPoints(input.value),
                 backgroundColor: "rgba(255, 0, 0, 0.9)",
                 borderColor: "rgba(255, 0, 0, 0.9)",
@@ -82,11 +90,12 @@ let chart = new chartjs.Chart(ctx, {
 function updateData() {
     chart.options.title.text = `USU funding provided for \$${input.value} event`;
     chart.data.datasets[0].data = getOldPoints(input.value);
-    chart.data.datasets[1].data = getNewPoints(input.value);
-    chart.data.datasets[2].data = getLine(input.value);
+    chart.data.datasets[1].data = getNewPoints(input.value, 0.3);
+    chart.data.datasets[2].data = getNewPoints(input.value);
+    chart.data.datasets[3].data = getLine(input.value);
     breakEvenOld.innerText = Math.ceil(input.value / 6);
-    breakEvenNew.innerText = Math.ceil(input.value - (input.value * 0.3));
-    percentRefunded.innerText = '$' + (input.value * 0.3).toFixed(2);
+    breakEvenNew.innerText = Math.ceil(input.value - (input.value * 0.5));
+    percentRefunded.innerText = '$' + (input.value * 0.5).toFixed(2);
     chart.update()
 }
 
